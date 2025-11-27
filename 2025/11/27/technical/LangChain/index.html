@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>LangChain 开源语言模型框架介绍 | Tao&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="什么是 LangChainLangChain 是一个开源框架，用于构建语言模型驱动的应用程序，特别是通过结合多个工具和模型来实现复杂的任务。它是由 LangChain, Inc. 开发的，旨在简化使用大语言模型（如 GPT）进行文本生成、查询、对话系统和其他自然语言处理（NLP）任务的流程。 LangChain 的核心目标是将自然语言处理技术与外部工具、数据源和应用结合起来，帮助开发者更轻松地创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LangChain 开源语言模型框架介绍">
+<meta property="og:url" content="http://example.com/2025/11/27/technical/LangChain/index.html">
+<meta property="og:site_name" content="Tao&#39;s Blog">
+<meta property="og:description" content="什么是 LangChainLangChain 是一个开源框架，用于构建语言模型驱动的应用程序，特别是通过结合多个工具和模型来实现复杂的任务。它是由 LangChain, Inc. 开发的，旨在简化使用大语言模型（如 GPT）进行文本生成、查询、对话系统和其他自然语言处理（NLP）任务的流程。 LangChain 的核心目标是将自然语言处理技术与外部工具、数据源和应用结合起来，帮助开发者更轻松地创建">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-11-27T03:40:52.529Z">
+<meta property="article:modified_time" content="2025-11-27T06:36:17.942Z">
+<meta property="article:author" content="Tao">
+<meta property="article:tag" content="LangChain">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Tao's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tao&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-technical/LangChain" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/27/technical/LangChain/" class="article-date">
+  <time class="dt-published" datetime="2025-11-27T03:40:52.529Z" itemprop="datePublished">2025-11-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">技术文章</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      LangChain 开源语言模型框架介绍
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是-LangChain"><a href="#什么是-LangChain" class="headerlink" title="什么是 LangChain"></a>什么是 LangChain</h1><p><strong>LangChain</strong> 是一个开源框架，用于构建语言模型驱动的应用程序，特别是通过结合多个工具和模型来实现复杂的任务。它是由 <strong>LangChain, Inc.</strong> 开发的，旨在简化使用大语言模型（如 GPT）进行文本生成、查询、对话系统和其他自然语言处理（NLP）任务的流程。</p>
+<p>LangChain 的核心目标是将自然语言处理技术与外部工具、数据源和应用结合起来，帮助开发者更轻松地创建复杂的语言模型应用。例如，可以将语言模型与数据库、API、文件系统等集成，从而提高模型的实用性和功能性。</p>
+<h1 id="LangChain的发展历程"><a href="#LangChain的发展历程" class="headerlink" title="LangChain的发展历程"></a>LangChain的发展历程</h1><p>LangChain 的发展可以追溯到 2022 年。它最初由 <strong>Harrison Chase</strong> 作为一个开源项目推出，目标是简化与大型语言模型（如 OpenAI GPT 系列）进行交互的过程。随着该项目的快速增长和越来越多的开发者参与，LangChain 团队在 2023 年成立了 LangChain, Inc.，并开始推进商业化和生态系统建设。</p>
+<p>LangChain 的设计目标是将语言模型与外部工具、数据库等结合起来，以构建复杂的任务链（Chain），例如：</p>
+<ul>
+<li>使用语言模型生成文本摘要后，再通过数据库查询相关信息；</li>
+<li>将语言模型与外部API集成，以增强模型的能力。</li>
+</ul>
+<p>LangChain 的开源代码和文档持续更新和优化，随着语言模型技术的快速发展，LangChain 逐步成为构建语言模型应用的重要工具之一。</p>
+<h1 id="LangChain有什么用"><a href="#LangChain有什么用" class="headerlink" title="LangChain有什么用"></a>LangChain有什么用</h1><p>LangChain 提供了丰富的功能，可以用于各种场景，特别是在 <strong>自然语言处理</strong> 和 <strong>智能应用</strong> 领域。以下是 LangChain 的一些主要用途：</p>
+<h2 id="1-构建多步骤的任务链（Chains）"><a href="#1-构建多步骤的任务链（Chains）" class="headerlink" title="1. 构建多步骤的任务链（Chains）"></a>1. 构建多步骤的任务链（Chains）</h2><p>LangChain 允许开发者通过将多个模型和任务结合，形成任务链。例如，你可以创建一个流程，先使用语言模型从输入文本中提取关键信息，然后使用该信息与外部数据库交互，最后生成一个响应。</p>
+<h2 id="2-智能代理（Intelligent-Agents）"><a href="#2-智能代理（Intelligent-Agents）" class="headerlink" title="2. 智能代理（Intelligent Agents）"></a>2. 智能代理（Intelligent Agents）</h2><p>LangChain 支持开发智能代理，它们能够在多个步骤中处理输入信息，决定下一步的动作，并与外部世界进行交互。这使得 LangChain 成为构建聊天机器人、虚拟助手等复杂系统的理想选择。</p>
+<h2 id="3-集成外部工具与数据库"><a href="#3-集成外部工具与数据库" class="headerlink" title="3. 集成外部工具与数据库"></a>3. 集成外部工具与数据库</h2><p>LangChain 支持将语言模型与其他工具结合，如调用外部 API、与数据库交互、读取文件等。它能够帮助开发者轻松管理数据流、模型交互以及外部系统集成。</p>
+<h2 id="4-记忆管理（Memory）"><a href="#4-记忆管理（Memory）" class="headerlink" title="4. 记忆管理（Memory）"></a>4. 记忆管理（Memory）</h2><p>LangChain 提供了记忆管理功能，可以帮助在多个交互中存储和回顾上下文信息。这对于构建需要长时间交互的应用（如对话系统、推荐系统）非常重要。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>LangChain 是一个强大的工具，它使得构建复杂的语言模型驱动的应用程序变得更加容易。通过将多个模型、外部工具、数据库和API集成，LangChain 允许开发者创建智能代理和多步骤任务链。它适用于各种应用场景，如对话系统、文本生成、查询处理等。</p>
+<p>虽然 LangChain 的主要实现是 Python，但可以通过 Python-Java 集成工具（如 Py4J 或 Jython）或者 REST API 来在 Java 中使用 LangChain，从而充分利用这一框架的功能。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/11/27/technical/LangChain/" data-id="cuidQGMFpXa-3OECIwE1lZVgA" data-title="LangChain 开源语言模型框架介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LangChain/" rel="tag">LangChain</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/11/27/welcome/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">欢迎来到 Tao&#39;s Blog</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">技术文章</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LangChain/" rel="tag">LangChain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag">配置</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LangChain/" style="font-size: 10px;">LangChain</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">配置</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">November 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/11/27/technical/LangChain/">LangChain 开源语言模型框架介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/27/welcome/">欢迎来到 Tao&#39;s Blog</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/26/technical/%E9%9A%8F%E4%BE%BF%E8%AE%B0%E5%BD%95/">环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2025/11/26/life/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 Tao<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
